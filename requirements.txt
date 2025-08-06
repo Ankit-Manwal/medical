@@ -1,0 +1,11 @@
+python==3.11
+spacy-streamlit
+setuptools wheel
+spacy
+streamlit
+streamlit-option-menu
+tensorflow
+seaborn
+matplotlib
+scikit-learn
+imblearn

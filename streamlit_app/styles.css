@@ -1,0 +1,53 @@
+/* Chat Message Styles */
+.user-message {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #2196f3;
+}
+
+.assistant-message {
+    background-color: #f1f8e9;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #4caf50;
+}
+
+.prediction-message {
+    background-color: #fff3e0;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #ff9800;
+}
+
+.message-gap {
+    height: 15px;
+}
+
+/* Alternative color scheme (if you want to use the colors from your current implementation) */
+.user-message-alt {
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #2196f3;
+}
+
+.assistant-message-alt {
+    background-color: grey;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #4caf50;
+}
+
+.prediction-message-alt {
+    background-color: brown;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #ff9800;
+} 
