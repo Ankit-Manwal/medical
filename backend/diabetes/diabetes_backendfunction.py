@@ -4,7 +4,8 @@ import numpy as np
 
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-model_path = os.path.join(parent_dir, 'diabetes/diabetes_model.pkl')
+# Use path relative to this file's directory to avoid duplication
+model_path = os.path.join(os.path.dirname(__file__), 'diabetes_model.pkl')
 
 model = pickle.load(open(model_path, "rb") )  
 

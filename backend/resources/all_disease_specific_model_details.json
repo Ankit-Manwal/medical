@@ -1,0 +1,82 @@
+{
+  "available_tests": {
+    "Akne": "Skin Diseases",
+    "Basal Cell Carcinoma (BCC)": "Skin Diseases",
+    "Melanocytic Nevi (NV)": "Skin Diseases",
+    "Melanoma": "Skin Diseases",
+    "Pigment": "Skin Diseases",
+    "Seborrheic Keratoses and other Benign Tumors": "Skin Diseases",
+    "Diabetes": "Diabetes"
+  },
+  "models": {
+
+    "Skin Diseases":{
+      "category": "image_classification",
+      "model_path": "general_conditions/specific_medical_model/skin_diseases/skin_diseases_model.h5",
+      "backend_function": "general_conditions/specific_medical_model/skin_diseases/skin_diseases_backendfunction.py::give_skin_diseases_prediction",
+      "classes": [
+        "Akne",
+        "Basal Cell Carcinoma (BCC)",
+        "Melanocytic Nevi (NV)",
+        "Melanoma",
+        "Pigment",
+        "Seborrheic Keratoses and other Benign Tumors"
+      ],
+      "parameters": [
+        {
+          "key": "image_path",
+          "type": "image",
+          "description": "Path to a skin lesion image",
+          "example": "general_conditions/specific_medical_model/skin_diseases/test dataset/Akne/image_Akne_0.png"
+        },
+        {
+          "key": "target_size",
+          "type": "integer[]",
+          "description": "Optional resize target (width,height)",
+          "example": [224, 224]
+        },
+        {
+          "key": "scale_factor",
+          "type": "float",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        }
+      ],
+      "test": {
+        "input": {
+          "image_path": "general_conditions/specific_medical_model/skin_diseases/test dataset/Akne/image_Akne_0.png"
+        },
+        "expected_output_keys": [
+          "predicted_disease",
+          "confidence_score"
+        ]
+      }
+    },
+
+
+    
+    "Diabetes":{
+      "category": "tabular_risk",
+      "model_path": "general_conditions/specific_medical_model/diabetes/diabetes_model.pkl",
+      "backend_function": "general_conditions/specific_medical_model/diabetes/diabetes_backendfunction.py::give_diabetes_prediction",
+      "parameters": [
+        { "key": "pregnancies", "type": "integer", "example": 6 },
+        { "key": "glucose", "type": "integer", "example": 148 },
+        { "key": "blood_pressure", "type": "integer", "example": 72 },
+        { "key": "skin_thickness", "type": "integer", "example": 35 },
+        { "key": "insulin", "type": "integer", "example": 0 },
+        { "key": "bmi", "type": "float", "example": 33.6 },
+        { "key": "diabetes_pedigree_function", "type": "float", "example": 0.627 },
+        { "key": "age", "type": "integer", "example": 50 }
+      ],
+      "test": {
+        "input": [6, 148, 72, 35, 0, 33.6, 0.627, 50],
+        "expected_output_keys": [
+          "predicted_disease",
+          "confidence_score"
+        ]
+      }
+    }
+  }
+}
